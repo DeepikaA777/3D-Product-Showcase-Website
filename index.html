@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aura Drive</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">AURA <span>DRIVE</span></div>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Features</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <button class="login-btn">Login</button>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+
+    <!-- LEFT BIG CAR -->
+    <div class="hero-left">
+      <img src="assets/MainCar.png" alt="Car Front View" />
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="hero-right">
+
+      <!-- Cars in background -->
+      <picture class="bg-car1">
+        <source srcset="assets/BackCar.png" type="image/png" />
+        <img src="assets/BackCar.png" alt="Car Side View" />
+      </picture>
+
+      <!-- TEXT BOX -->
+      <div class="hero-box">
+        <h3>A New</h3>
+        <h1>Dimension<br>of Cars</h1>
+<button class="glow-btn">Explore Now!</button>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+  <!-- FIND YOUR CAR SECTION -->
+<section class="find-car">
+  <h2>Find Your Car</h2>
+
+  <div class="find-grid">
+
+    <div class="find-card">
+      <div class="icon-wrapper">
+        <img src="assets/SearchCar.png" alt="Search Car" class="icon">
+      </div>
+      <h3>Search for Cars</h3>
+      <p>Find your perfect car from thousands of options easily.</p>
+      <button>Search Now!</button>
+    </div>
+
+    <div class="find-card">
+      <div class="icon-wrapper">
+        <img src="assets/AddCar.png" alt="Build Car" class="icon">
+      </div>
+      <h3>Build Your Own Car</h3>
+      <p>Customize your car exactly the way you want it.</p>
+      <button>Configure Now!</button>
+    </div>
+
+    <div class="find-card">
+      <div class="icon-wrapper">
+        <img src="assets/BookCar.png" alt="Test Drive" class="icon">
+      </div>
+      <h3>Book a Test Drive</h3>
+      <p>Experience your dream car before you buy it.</p>
+      <button>Give a Request!</button>
+    </div>
+
+
+    <!-- Why you choose us section -->
+     <section class="why-choose-us">
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <h1>AURA DRIVE</h1>
+      <p>Drive the Future</p>
+    </div>
+
+    <!-- Heading -->
+    <h2>Why choose us?</h2>
+
+    <!-- Cards -->
+    <div class="cards">
+      <div class="card">
+        <div class="icon">
+          <img src="assets/icon1.png" alt="Immersive 3D">
+        </div>
+        <h3>Immersive 3D Exploration</h3>
+        <p>View and interact with cars in realistic 3D, beyond static images.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          <img src="assets/icon2.png" alt="Brand Neutral">
+        </div>
+        <h3>Brand-Neutral Platform</h3>
+        <p>Explore vehicles from multiple brands with unbiased, transparent presentation.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          <img src="assets/icon3.png" alt="High Detail">
+        </div>
+        <h3>High Detail & Smooth Performance</h3>
+        <p>Explore vehicles from multiple brands with unbiased, transparent presentation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+
+
+
+
+  <!-- CURSOR GLOW EFFECT -->
+<div class="cursor-glow"></div>
+<script>
+  const glow = document.querySelector(".cursor-glow");
+
+  document.addEventListener("mousemove", (e) => {
+    glow.style.left = e.clientX + "px";
+    glow.style.top = e.clientY + "px";
+  });
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,438 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f3b4cc 0%, #6a0066 100%);
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 80px;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  color: #7a006f;
+}
+
+.logo span {
+  color: #b000a6;
+}
+
+nav a {
+  margin: 0 18px;
+  text-decoration: none;
+  color: #2a002a;
+  font-weight: 500;
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #a100a8, #65006a);
+  color: #fff;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 96px);
+  padding: 0 80px;
+  position: relative;
+}
+
+/* LEFT CAR */
+.hero-left {
+  position: relative;
+  z-index: 3;
+}
+
+.hero-left img {
+  width: 700px;
+  height: auto;
+  filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.4));
+  margin-left: -100px;
+  margin-bottom: 200px;
+}
+
+
+/* RIGHT SIDE */
+.hero-right {
+  margin-left: auto;
+  position: relative;
+  width: 460px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* BACKGROUND CAR */
+.bg-car1 {
+  position: absolute;
+  top: -100px;
+  right: -120px;
+  bottom: 1000px;
+  z-index: 1;
+  opacity: 0.45;
+  transform: scale(0.85);
+}
+
+.bg-car1 img {
+  width: 1500px;
+  height: auto;
+  filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.4))  ;
+}
+
+/* GLASS CARD */
+.hero-box {
+  position: relative;
+  z-index: 2;
+
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  border-radius: 28px;
+  padding: 52px 64px;
+  text-align: center;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    inset 0 0 18px rgba(255, 255, 255, 0.2);
+
+  color: #fff;
+  top: 100px;
+  left:-200px;
+
+}
+
+/* TEXT */
+.hero-box h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 400;
+  opacity: 0.85;
+  margin-bottom: 8px;
+}
+
+.hero-box h1 {
+  font-size: 50px;
+  line-height: 1.15;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+/* GLOW BUTTON */
+.glow-btn {
+  position: relative;
+  padding: 18px 70px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  border-radius: 60px;
+  cursor: pointer;
+
+  /* CLEAN BUTTON SURFACE */
+  background: linear-gradient(
+    180deg,
+    #d95ce6 0%,
+    #b12db7 45%,
+    #6a0066 100%
+  );
+
+  border: 3px solid white;
+
+  /* 3D DEPTH (NO GLOW HERE) */
+  box-shadow:
+    0 10px 0 #4b004f,
+    0 20px 35px rgba(0, 0, 0, 0.45),
+    inset 0 3px 6px rgba(255,255,255,0.35),
+    inset 0 -10px 18px rgba(0,0,0,0.45);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* 🔥 OUTER GLOW ONLY */
+.glow-btn::before {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  border-radius: inherit;
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 90, 255, 0.8),
+    rgba(255, 90, 255, 0.3),
+    transparent 70%
+  );
+
+  filter: blur(22px);
+  z-index: -1;
+}
+
+/* GLOSSY TOP */
+.glow-btn::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 6%;
+  right: 6%;
+  height: 40%;
+  border-radius: 50px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.45),
+    rgba(255,255,255,0.05)
+  );
+}
+
+/* HOVER */
+.glow-btn:hover {
+  transform: translateY(-4px);
+}
+
+/* PRESS */
+.glow-btn:active {
+  transform: translateY(6px);
+  box-shadow:
+    0 6px 0 #4b004f,
+    0 14px 25px rgba(0,0,0,0.45),
+    inset 0 2px 4px rgba(255,255,255,0.3),
+    inset 0 -6px 12px rgba(0,0,0,0.4);
+}
+
+
+
+
+  /* CUSTOM GLOW CURSOR*/
+  .cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 120px;
+    pointer-events: none;
+    z-index: 9999;
+
+    border-radius: 50%;
+
+    /* Initial color */
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.08), transparent 70%);
+
+    filter: blur(25px);
+    transform: translate(-50%, -50%);
+    transition: background 0.2s ease; /* Smooth color change */
+  }
+
+/* Find Car Section */
+.find-car {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #ffdcea, #ffd2e3);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.find-car h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #222;
+  position: relative;
+}
+
+.find-car h2::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background-color: #6a0066;
+  display: block;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.find-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.find-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  transition: transform 0.4s, box-shadow 0.4s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.find-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+.icon-wrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffc1fd, #9f008f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  transition: transform 0.4s;
+}
+
+.find-card:hover .icon-wrapper {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+}
+
+.find-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.find-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Button Style */
+.find-card button {
+  padding: 10px 20px;
+  border: 2px solid purple; /* Purple border */
+  background: transparent;   /* No initial color */
+  color: purple;             /* Text color */
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover Effect */
+.find-card button:hover {
+  background-color: purple;  /* Fill with purple on hover */
+  color: white;              /* Change text color for contrast */
+  transform: scale(1.05);    /* Optional: slight zoom effect */
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .find-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .find-car h2 {
+    font-size: 2rem;
+  }
+}
+
+
+
+/* Why you choose us Section Styles */
+.why-choose-us {
+  background-color: #6a0066; /* Purple background */
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Logo */
+.why-choose-us .logo h1 {
+  font-size: 36px;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.why-choose-us .logo p {
+  font-size: 18px;
+  color: #e0cfff; /* lighter purple for subtitle */
+}
+
+/* Heading */
+.why-choose-us h2 {
+  font-size: 28px;
+  margin: 40px 0 30px;
+  color: #fff;
+}
+
+/* Cards Container */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Individual Card */
+.card {
+  background-color: #e8d7f0; /* Light purple card */
+  color: #000;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Hover Effect */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+/* Card Icon */
+.card .icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+}
+
+.card .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Card Text */
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.5;
+}
