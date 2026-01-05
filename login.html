@@ -18,21 +18,46 @@
     auraBlue: '#1b3fd6'
           } }}}
   </script>
-</head>
-<body class="min-h-screen bg-gradient-to-br from-purple-800 via-indigo-800 to-blue-700 flex items-center justify-center px-4">
 
-  <!-- Background decorative image -->
-  <img 
-    src="/mnt/data/7b84451c-d0a4-47d2-b783-33cbe565811f.png"
-    alt=""
-    class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
-  />
-  <!-- Card -->
-  <div class="relative w-full max-w-2xl rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl p-8 md:p-12">
-    <!-- Logo -->
+  <!-- Parallax image style -->
+<style>
+  .parallax {
+    will-change: transform;
+    transform: translate3d(0,0,0);
+  }
+</style>
+
+
+</head>
+<body class="min-h-screen overflow-y-scroll scrollbar-hide bg-gradient-to-br from-purple-800 via-indigo-800 to-blue-700 flex items-center justify-center px-4">
+
+      <!-- Logo -->
     <div class="absolute top-6 left-6 text-white font-semibold tracking-wide">
       AURA DRIVE
     </div>
+
+  <!-- Background decorative image -->
+  <img 
+    src="assets/Login_Assets/login_bg.png"
+    alt=""
+    class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
+  />
+<img 
+  src="assets/Login_Assets/login1.png"
+  class="parallax absolute top-0 right-20 w-1/2 max-w-sm opacity-80 pointer-events-none"
+  data-speed="30"
+/>
+
+<img 
+  src="assets/Login_Assets/login2.png"
+  class="parallax absolute bottom-0 left-20 w-1/2 max-w-sm opacity-100 pointer-events-none z-10"
+  data-speed="50"
+/>
+
+
+  <!-- Card -->
+  <div class="relative w-full max-w-2xl rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl p-8 md:p-12">
+
     <!-- Heading -->
     <h1 class="text-4xl font-bold text-white text-center mb-3">
       Create an account
@@ -74,6 +99,50 @@
       </div>
     </form>
   </div>
+
+  <!-- Parallax Effect Script -->
+<script>
+  const items = document.querySelectorAll('.parallax');
+
+  let mouseX = 0, mouseY = 0;
+  let currentX = 0, currentY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX / window.innerWidth - 0.5);
+    mouseY = (e.clientY / window.innerHeight - 0.5);
+  });
+
+  function animate() {
+    currentX += (mouseX - currentX) * 0.02;
+    currentY += (mouseY - currentY) * 0.02;
+
+    items.forEach(item => {
+      const speed = parseFloat(item.dataset.speed);
+
+      // Ultra-slow translation
+      const translateX = currentX * speed * 8; // smaller factor
+      const translateY = currentY * speed * 8;
+
+      const rotateX = currentY * speed / 15;
+      const rotateY = currentX * speed / 15;
+
+      item.style.transform = `
+        translate3d(${translateX}px, ${translateY}px, 0)
+        rotateX(${rotateX}deg)
+        rotateY(${rotateY}deg)
+      `;
+    });
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
+
+
+
+
+
 
 </body>
 </html>
